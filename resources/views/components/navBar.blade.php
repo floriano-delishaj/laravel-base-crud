@@ -9,6 +9,11 @@
         <div class="header-right">
             <ul>
                 <li class="">
+                    <a href="{{ route('home') }}">
+                        Home
+                    </a>
+                </li>
+                <li class="">
                     <a href="{{ route('comics.index') }}">
                         Comics
                     </a>

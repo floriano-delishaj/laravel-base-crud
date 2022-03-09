@@ -42,6 +42,17 @@
                     </div>
                 </div>
             </div>
+
+            <div class="d-flex">
+                <a class="btn btn-primary px-4" href="{{route('comics.edit', $comic['id'])}}">Edit</a>
+
+                <form  action="{{route('comics.destroy', $comic['id'])}}" method="post">
+                    @csrf
+                    @method('delete')
+                    <button class="btn btn-danger px-4" type="submit">Delete</button>
+                </form>
+            </div>
+
         </div>
         <hr />
         <div class="container d-flex justify-content-center">

@@ -3,6 +3,9 @@
 @section('pageTitle', 'Create')
 
 @section('content')
+
+    <h1 class="my-4 text-center">Create new Comic</h1>
+
 <div class="container my-5">
     <form action="{{ route('comics.store') }}" method="post">
         @csrf
@@ -24,7 +27,7 @@
         </div>
         <div class="form-group mb-3">
             <label for="exampleInputPassword1">Price</label>
-            <input type="number" class="form-control" name="price" placeholder="Enter Price">
+            <input type="number" step="any" class="form-control" name="price" placeholder="Enter Price">
         </div>
         <div class="form-group mb-3">
             <label for="exampleInputPassword1">Url</label>

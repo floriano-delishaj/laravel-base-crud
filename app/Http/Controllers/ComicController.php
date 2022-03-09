@@ -46,8 +46,9 @@ class ComicController extends Controller
     public function store(Request $request)
     {
         $comic = $request->all();
+        $newComic = Comic::create($comic);
 
-        $newComic = new Comic();
+/*        $newComic = new Comic();
 
         $newComic->title = $comic['title'];
         $newComic->series = $comic['series'];
@@ -57,7 +58,7 @@ class ComicController extends Controller
         $newComic->thumb = $comic['thumb'];
         $newComic->description = $comic['description'];
 
-        $newComic->save();
+        $newComic->save();*/
 
         return redirect()->route('comics.show', $newComic->id);
     }
@@ -75,7 +76,7 @@ class ComicController extends Controller
      */
     public function edit(Comic $comic)
     {
-        //
+        return view('comics.edit', compact('comic'));
     }
 
     /**
@@ -87,7 +88,11 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        //
+        $data = $request->all();
+
+        $comic->update($data);
+
+        return redirect()->route('comics.show', compact('comic'));
     }
 
     /**
@@ -98,6 +103,8 @@ class ComicController extends Controller
      */
     public function destroy(Comic $comic)
     {
-        //
+        $comic->delete();
+
+        return redirect()->route('comics.index');
     }
 }
