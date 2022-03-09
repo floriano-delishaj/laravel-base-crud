@@ -65,7 +65,7 @@
                                         Are you sure you want to delete comic  <b>#{{$comic->id}}</b> ? You will not be able to go back
                                     </div>
                                     <div class="modal-footer">
-                                        <button class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                                        <a class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</a>
                                         <button type="submit" class="btn btn-danger">Delete</button>
                                     </div>
                                 </div>
