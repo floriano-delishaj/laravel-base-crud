@@ -7,7 +7,6 @@
     <h1 class="my-4 text-center">Edit Comic #{{$comic->id}}</h1>
 
     <div class="container my-5">
-            {{-- errore {{ route('comics.update'), $comic->id }} nell'action --}}
         <form action="{{ route('comics.update', $comic->id) }}" method="post">
             @csrf
             @method('PUT')
@@ -38,7 +37,7 @@
             </div>
             <div class="form-group mb-3">
                 <label for="exampleInputPassword1">Description</label>
-                <textarea type="text" class="form-control" name="description" placeholder="Enter Description">{{$comic->description}}" </textarea>
+                <textarea type="text" class="form-control" name="description" placeholder="Enter Description">{{$comic->description}}</textarea>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>

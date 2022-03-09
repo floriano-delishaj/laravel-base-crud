@@ -90,6 +90,7 @@ class ComicController extends Controller
     {
         $data = $request->all();
 
+        //esegue sia il fill() che il save()
         $comic->update($data);
 
         return redirect()->route('comics.show', compact('comic'));
