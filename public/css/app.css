@@ -12185,6 +12185,10 @@ textarea {
   height: 200px;
 }
 
+.required::after {
+  content: " *";
+}
+
 header {
   background-color: #fff;
   padding: 10px 0;

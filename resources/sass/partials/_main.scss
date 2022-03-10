@@ -11,3 +11,7 @@ ul {
 textarea {
     height: 200px;
 }
+
+.required::after {
+    content: ' *';
+}

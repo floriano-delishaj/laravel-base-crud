@@ -24,11 +24,11 @@ class ComicStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|min:5',
-            'series' => 'required|min:5',
-            'type'=> 'nullable|min:5',
+            'title' => 'required|min:5|max:150',
+            'series' => 'required|min:5|max:100',
+            'type'=> 'nullable|min:5|max:100',
             'sale_date'=> 'required',
-            'price' => 'required|numeric',
+            'price' => 'required|numeric|max:10',
             'thumb' => 'nullable|url',
             'description' => 'nullable|min:10'
         ];
