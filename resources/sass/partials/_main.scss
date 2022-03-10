@@ -15,3 +15,7 @@ textarea {
 .required::after {
     content: ' *';
 }
+
+.message-is-invalid {
+    font-weight: bold;
+}

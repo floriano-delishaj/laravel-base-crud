@@ -31,7 +31,7 @@
                            value="{{ old('title') }}"
                     >
                     @error('title')
-                        <div class="invalid-feedback">{{ $message }}</div>
+                        <div class="invalid-feedback">{!! $message !!}</div>
                     @enderror
                 </div>
             </div>
@@ -46,7 +46,7 @@
                            value="{{ old('series') }}"
                     >
                     @error('series')
-                    <div class="invalid-feedback">{{ $message }}</div>
+                    <div class="invalid-feedback">{!! $message !!}</div>
                     @enderror
                 </div>
             </div>
@@ -63,7 +63,7 @@
                            value="{{ old('type') }}"
                     >
                     @error('type')
-                    <div class="invalid-feedback">{{ $message }}</div>
+                    <div class="invalid-feedback">{!! $message !!}</div>
                     @enderror
                 </div>
             </div>
@@ -77,7 +77,7 @@
                            value="{{ old('sale_date') }}"
                     >
                     @error('sale_date')
-                    <div class="invalid-feedback">{{ $message }}</div>
+                    <div class="invalid-feedback">{!! $message !!}</div>
                     @enderror
                 </div>
             </div>
@@ -95,7 +95,7 @@
                            value="{{ old('price') }}"
                     >
                     @error('price')
-                    <div class="invalid-feedback">{{ $message }}</div>
+                    <div class="invalid-feedback">{!! $message !!}</div>
                     @enderror
                 </div>
             </div>
@@ -110,7 +110,7 @@
                            value="{{ old('thumb') }}"
                     >
                     @error('thumb')
-                    <div class="invalid-feedback">{{ $message }}</div>
+                    <div class="invalid-feedback">{!! $message !!}</div>
                     @enderror
                 </div>
             </div>
@@ -128,7 +128,7 @@
                       value="{{ old('description') }}"
             ></textarea>
             @error('description')
-            <div class="invalid-feedback">{{ $message }}</div>
+            <div class="invalid-feedback">{!! $message !!}</div>
             @enderror
         </div>
 

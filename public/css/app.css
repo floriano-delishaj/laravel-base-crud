@@ -12189,6 +12189,10 @@ textarea {
   content: " *";
 }
 
+.message-is-invalid {
+  font-weight: bold;
+}
+
 header {
   background-color: #fff;
   padding: 10px 0;
