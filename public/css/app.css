@@ -12181,9 +12181,14 @@ ul {
   list-style: none;
 }
 
+textarea {
+  height: 200px;
+}
+
 header {
   background-color: #fff;
   padding: 10px 0;
+  border-bottom: 1px solid #0282f9;
 }
 
 header .container {
@@ -12192,7 +12197,7 @@ header .container {
 }
 
 header .container .header-left {
-  width: 50%;
+  width: 35%;
   height: 100%;
 }
 

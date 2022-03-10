@@ -11,35 +11,119 @@
             @csrf
             @method('PUT')
 
-            <div class="form-group my-3">
-                <label for="exampleInputEmail1">Title</label>
-                <input type="text" class="form-control" name="title" value="{{$comic->title}}" placeholder="Enter Title" >
+            <div class="row">
+                <div class="col">
+                    <div class="form-group mb-3">
+                        <label for="exampleInputEmail1">Title *</label>
+                        <input type="text"
+                               class="form-control @error('title') is-invalid @enderror"
+                               name="title"
+                               placeholder="Enter Title"
+                               value="{{ $comic->title }}"
+                        >
+                        @error('title')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="form-group mb-3">
+                        <label for="exampleInputPassword1">Series *</label>
+                        <input type="text"
+                               class="form-control @error('series') is-invalid @enderror"
+                               name="series"
+                               placeholder="Enter Series"
+                               value="{{ $comic->series }}"
+                        >
+                        @error('series')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
             </div>
-            <div class="form-group mb-3">
-                <label for="exampleInputPassword1">Series</label>
-                <input type="text" class="form-control" name="series" value="{{$comic->series}}" placeholder="Enter Series">
+
+            <div class="row">
+                <div class="col">
+                    <div class="form-group mb-3">
+                        <label for="exampleInputPassword1">Type</label>
+                        <input type="text"
+                               class="form-control @error('type') is-invalid @enderror"
+                               name="type"
+                               placeholder="Enter Type"
+                               value="{{ $comic->type }}"
+                        >
+                        @error('type')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="form-group mb-3">
+                        <label for="exampleInputPassword1">Sale Date *</label>
+                        <input type="date"
+                               class="form-control @error('sale_date') is-invalid @enderror"
+                               name="sale_date"
+                               value="{{ $comic->sale_date }}"
+                        >
+                        @error('sale_date')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
             </div>
-            <div class="form-group mb-3">
-                <label for="exampleInputPassword1">Type</label>
-                <input type="text" class="form-control" name="type" value="{{$comic->type}}" placeholder="Enter Type">
+
+            <div class="row">
+                <div class="col">
+                    <div class="form-group mb-3">
+                        <label for="exampleInputPassword1">Price *</label>
+                        <input type="number"
+                               step="any"
+                               class="form-control @error('price') is-invalid @enderror"
+                               name="price"
+                               placeholder="Enter Price"
+                               value="{{ $comic->price }}"
+                        >
+                        @error('price')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="form-group mb-3">
+                        <label for="exampleInputPassword1">Url</label>
+                        <input type="url"
+                               class="form-control @error('thumb') is-invalid @enderror"
+                               name="thumb"
+                               placeholder="Enter Url"
+                               value="{{ $comic->thumb }}"
+                        >
+                        @error('thumb')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
             </div>
-            <div class="form-group mb-3">
-                <label for="exampleInputPassword1">Sale Date</label>
-                <input type="date" class="form-control" value="{{$comic->sale_date}}"  name="sale_date">
-            </div>
-            <div class="form-group mb-3">
-                <label for="exampleInputPassword1">Price</label>
-                <input type="number" step="any" class="form-control" name="price" value="{{$comic->price}}" placeholder="Enter Price">
-            </div>
-            <div class="form-group mb-3">
-                <label for="exampleInputPassword1">Url</label>
-                <input type="url" class="form-control" name="thumb" value="{{$comic->thumb}}" placeholder="Enter Url">
-            </div>
+
+
+
+
             <div class="form-group mb-3">
                 <label for="exampleInputPassword1">Description</label>
-                <textarea type="text" class="form-control" name="description" placeholder="Enter Description">{{$comic->description}}</textarea>
+                <textarea type="text"
+                          class="form-control @error('description') is-invalid @enderror"
+                          name="description"
+                          placeholder="Enter Url"
+                >{{ $comic->description }}</textarea>
+                @error('description')
+                <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
             </div>
+
             <button type="submit" class="btn btn-primary">Submit</button>
+
         </form>
     </div>
 @endsection

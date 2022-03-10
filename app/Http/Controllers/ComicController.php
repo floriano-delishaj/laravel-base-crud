@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Comic;
 use Illuminate\Http\Request;
+use App\Http\Requests\ComicStoreRequest;
 
 class ComicController extends Controller
 {
@@ -43,9 +44,9 @@ class ComicController extends Controller
         return view('comics.create');
     }
 
-    public function store(Request $request)
+    public function store(ComicStoreRequest $request)
     {
-        $comic = $request->all();
+        $comic = $request->validated();
 
         $newComic = Comic::create($comic);
 
@@ -74,10 +75,10 @@ class ComicController extends Controller
         return view('comics.edit', compact('comic'));
     }
 
-    public function update(Request $request, Comic $comic)
+    public function update(ComicStoreRequest $request, Comic $comic)
     {
         //esegue sia il fill() che il save()
-        $comic->update($request->all());
+        $comic->update($request->validated());
 
         return redirect()->route('comics.show', compact('comic'));
     }
